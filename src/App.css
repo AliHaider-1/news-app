@@ -1,37 +1,67 @@
+* {
+  font-family: Calibri;
+}
 .App {
-  text-align: center;
+  
 }
 
 .App-logo {
-  height: 10vmin;
-  pointer-events: none;
+  height: 30px;
+  margin: 15px;
 }
 
 /* This applies from 600px onwards */
 @media (min-width: 600px) {
   .App-logo {
-    height: 20vmin;
-    pointer-events: none;
+    height: 46px;
+    margin: 7px;
+    margin-left: 20px;
   }
 }
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background-color: #5514b4;
+  height: 60px;
+  width: 100vw;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #ffffff;
+}
+.App-section{
+  padding: 20px;
+  text-align: center;
+  width: 80vw;
+}
+.App-footer {
+  background-color: #5514b4;
+  height: 50px;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  font-size: calc(10px + 2vmin);
+  color: #ffffff;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-
-
-
+div {
+  background-color: #ffffff;
+}
+h1{
+  font-size: calc(10px + 2vmin);
+}
+h2 {
+  position: relative;
+  top: 10px;
+  padding: 20px;
+  text-align: center;
+  display: inline;
+  color: #ffffff;
+  
+}
+h5 {
+  text-align: center;
+}
 
 /*
  BT-boilerplate added Start.

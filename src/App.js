@@ -9,9 +9,14 @@ function App() {
           className="App-logo"
           alt="logo"
         />
-        <h1>BT React Code Test - by John Doe - #/01/21</h1>
-        <p>Search News articles</p>
+        <h2>Search News articles</h2>
       </header>
+      <section className="App-section">
+        <h1>BT React Code Test - by John Doe - #/01/21</h1>
+      </section>
+      <footer className="App-footer">
+        <h5> © BT 2021</h5>
+      </footer>
     </div>
   );
 }
