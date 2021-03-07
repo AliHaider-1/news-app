@@ -1,22 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img
+          src="https://img01.bt.co.uk/s/assets/191120/images/logo/logo-2018.svg"
+          className="App-logo"
+          alt="logo"
+        />
+        <h1>BT React Code Test - by John Doe - #/01/21</h1>
+        <p>Search News articles</p>
       </header>
     </div>
   );
