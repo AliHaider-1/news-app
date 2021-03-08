@@ -33,14 +33,16 @@ useEffect(() => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "https://newsapi.org/v2/top-headlines?country=us&apiKey=3ce1a4e5cf594ca7bd6ae27af898c3a1" 
+        "https://newsapi.org/v2/top-headlines?country=us&apiKey=3c1a4e5cf594ca7bd6ae27af898c3a1" 
       );
       if (response === undefined) {
         setIsLoading(true);
       } 
-       else if (response === 426) {
+       else if (response.status >= 400) {
          setIsLoading(true);
-       } else {
+         setState(response.status + " Bad Request ");
+       } 
+        else {
          const data = await response.json();
          setDataArr(data.articles);
          console.log(data);
@@ -75,12 +77,14 @@ useEffect(() => {
         />
 
         {isLoading ? (
+          
           <div>
             Loading ...
             <h3> ERROR:_ {state} </h3>
           </div>
+          
         ) : (
-          <div className="row m-3 p-2">
+ <div className="row m-3 p-2">
             {dataArr.map((user) => (
               <div>
                 <Card
