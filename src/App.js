@@ -35,8 +35,7 @@ useEffect(() => {
           method: "get",
           headers: new Headers({
             "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-            "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Origin": origin,
+            "Access-Control-Allow-Origin": "*",
           }),
         }
       );
