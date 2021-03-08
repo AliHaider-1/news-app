@@ -7,6 +7,9 @@ import Card from "react-bootstrap/Card";
 function App() {
   let [searchInput, setSearchInput] = useState("");
 
+ let [state,setState] =useState("");
+
+
   function handleInput(e) {
     setSearchInput(e.target.value);
     console.log(e.target.value);
@@ -34,16 +37,20 @@ useEffect(() => {
       );
       if (response === undefined) {
         setIsLoading(true);
-      } else {
-        const data = await response.json();
-        setDataArr(data.articles);	
-        console.log(data);
-        setIsLoading(false);
-        
-      }
+      } 
+       else if (response === 426) {
+         setIsLoading(true);
+       } else {
+         const data = await response.json();
+         setDataArr(data.articles);
+         console.log(data);
+         setIsLoading(false);
+       }
      
-    } catch (error) {
-      console.log(error.message);
+    } catch (err) {
+      setState(err.message);
+     console.log(err.message);
+     
     }
   };
   
@@ -68,16 +75,22 @@ useEffect(() => {
         />
 
         {isLoading ? (
-          <div>Loading ...</div>
+          <div>
+            Loading ...
+            <h3> ERROR:_ {state} </h3>
+          </div>
         ) : (
           <div className="row m-3 p-2">
             {dataArr.map((user) => (
               <div>
-                <Card style={{ width: "20rem", height: "40rem" }}>
+                <Card
+                  key={user.name}
+                  style={{ width: "20rem", height: "40rem" }}
+                >
                   <Card.Img
                     variant="top"
                     src={user.urlToImage}
-                    style={{  height: "12rem" }}
+                    style={{ height: "12rem" }}
                   />
                   <Card.Title>
                     <strong>{user.title}</strong>
