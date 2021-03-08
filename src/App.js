@@ -35,7 +35,8 @@ useEffect(() => {
           method: "get",
           headers: new Headers({
             "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin":
+              "https://alihaider-1.github.io/news-app/",
           }),
         }
       );
