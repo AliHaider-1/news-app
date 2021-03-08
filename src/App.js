@@ -33,10 +33,10 @@ useEffect(() => {
         "https://newsapi.org/v2/top-headlines?country=us&apiKey=3ce1a4e5cf594ca7bd6ae27af898c3a1",
         {
           method: "get",
-          headers: new Headers({
+          headers: {
             "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
             "Access-Control-Allow-Origin": "*",
-          }),
+          },
         }
       );
       if (response === undefined) {
