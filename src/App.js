@@ -69,45 +69,47 @@ mode:'cors',});
         />
         <h2>Search News articles</h2>
       </header>
-      <section className="App-section">
-        <h1>BT React Code Test - by John Doe - #/01/21</h1>
+      <main>
+        <section className="App-section">
+          <h1>BT React Code Test - by John Doe - #/01/21</h1>
 
-        <SearchComponent handleButton={handleButton} />
+          <SearchComponent handleButton={handleButton} />
 
-        {isLoading ? (
-          <div>
-            Loading ...
-            <h3> ERROR:_ {state} </h3>
-          </div>
-        ) : (
-          <div className="container">
-            <h4>{title}</h4>
-            <div className="row m-3 p-2">
-              {items.map((user, index) => (
-                <div key={index}>
-                  <Card style={{ width: "16rem", height: "38rem" }}>
-                    <Card.Img
-                      variant="top"
-                      src={user.urlToImage}
-                      style={{ height: "12rem" }}
-                      alt={user.title}
-                    />
-                    <Card.Title>
-                      <strong>{user.title}</strong>
-                    </Card.Title>
-                    <Card.Body>
-                      <Card.Text>{user.description}</Card.Text>
-                    </Card.Body>
-                    <a href={user.url} className="btn btn-primary">
-                      Goto Official Page
-                    </a>
-                  </Card>
-                </div>
-              ))}
+          {isLoading ? (
+            <div>
+              Loading ...
+              <h3> ERROR:_ {state} </h3>
             </div>
-          </div>
-        )}
-      </section>
+          ) : (
+            <div className="container">
+              <h4>{title}</h4>
+              <div className="row m-3 p-2">
+                {items.map((user, index) => (
+                  <div key={index}>
+                    <Card style={{ width: "16rem", height: "38rem" }}>
+                      <Card.Img
+                        variant="top"
+                        src={user.urlToImage}
+                        style={{ height: "12rem" }}
+                        alt={user.title}
+                      />
+                      <Card.Title>
+                        <strong>{user.title}</strong>
+                      </Card.Title>
+                      <Card.Body>
+                        <Card.Text>{user.description}</Card.Text>
+                      </Card.Body>
+                      <a href={user.url} className="btn btn-primary">
+                        Goto Official Page
+                      </a>
+                    </Card>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </section>
+      </main>
       <div className="extraSpace"></div>
       <footer className="App-footer">
         <h5> © BT 2021</h5>
