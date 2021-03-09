@@ -36,7 +36,7 @@ mode:'cors',});
         setIsLoading(true);
       } else if (response.status >= 400) {
         setIsLoading(true);
-        setState(response.status + " Bad Request ");
+        setState("ERROR:_ "+response.status+" "+response.message);
       } else {
         const data = await response.json();
         setDataArr(data.articles);
