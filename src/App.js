@@ -28,7 +28,10 @@ function App() {
 useEffect(() => {
   const fetchData = async () => {
     try {
-      const response = await fetch(url);
+      const response = await fetch(url,{
+method: 'GET',
+cache: 'no-cache',
+mode:'cors',});
       if (response === undefined) {
         setIsLoading(true);
       } else if (response.status >= 400) {
