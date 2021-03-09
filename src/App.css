@@ -26,19 +26,21 @@
 .App-header {
   background-color: #5514b4;
   height: 60px;
-  width: 100vw;
+  width: 100%;
   font-size: calc(10px + 2vmin);
   color: #ffffff;
 }
 .App-section{
   text-align: center;
-  width: 100vw;
+  width: 100%;
 }
 .App-footer {
+  display: flex;
+  flex-direction: column-reverse;
   background-color: #5514b4;
-  height: 50px;
-  width: 100vw;
-  position: fixed;
+  height: 40px;
+  width: 100%;
+  position: relative;
   bottom: 0;
   font-size: calc(10px + 2vmin);
   color: #ffffff;
