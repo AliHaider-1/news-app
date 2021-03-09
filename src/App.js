@@ -80,12 +80,12 @@ mode:'cors',});
             <h3> ERROR:_ {state} </h3>
           </div>
         ) : (
-          <div>
+          <div className="container">
             <h4>{title}</h4>
             <div className="row m-3 p-2">
               {items.map((user, index) => (
                 <div key={index}>
-                  <Card style={{ width: "20rem", height: "40rem" }}>
+                  <Card style={{ width: "16rem", height: "38rem" }}>
                     <Card.Img
                       variant="top"
                       src={user.urlToImage}
