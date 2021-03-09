@@ -1,19 +1,16 @@
+/* font family Calibri applied */
 * {
   font-family: Calibri;
 }
-.App {
-  
-}
 
+/* BT App logo styling */
 .App-logo {
   height: 30px;
   margin: 15px;
 }
-.extraSpace{
-  height: 60px;
-}
 
 
+/* media queries implemented for mobile first responsive design */
 /* This applies from 600px onwards */
 @media (min-width: 600px) {
   .App-logo {
@@ -23,6 +20,8 @@
   }
  
 }
+
+/* app header styles */
 .App-header {
   background-color: #5514b4;
   height: 60px;
@@ -30,10 +29,14 @@
   font-size: calc(10px + 2vmin);
   color: #ffffff;
 }
+
+/* App section styles */
 .App-section{
   text-align: center;
   width: 100%;
 }
+
+/* App footer styles */
 .App-footer {
   display: flex;
   flex-direction: column-reverse;
@@ -46,16 +49,26 @@
   color: #ffffff;
 }
 
+/* extra space styling so the data get hide behind the footer  */
+.extraSpace{
+  height: 60px;
+}
+
+
+/* app link styles */
 .App-link {
   color: #61dafb;
 }
 
+/* app div styles */
 div {
   background-color: #ffffff;
 }
+/* app h1 styles */
 h1{
   font-size: calc(10px + 2vmin);
 }
+/* app h2 styles */
 h2 {
   position: relative;
   top: 10px;
@@ -65,6 +78,7 @@ h2 {
   color: #ffffff;
   
 }
+/* app h5 styles */
 h5 {
   text-align: center;
 }

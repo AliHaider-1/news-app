@@ -1,11 +1,11 @@
 import React from "react";
-
-
+/* Search React Component Created */
 const SearchComponent = ({handleButton}) => {
  
   return (
     <div>
       <form>
+        {/* bootstrap 4 classes added to style the search component */}
         <div class="container input-group">
           <input
             type="search"
@@ -17,6 +17,7 @@ const SearchComponent = ({handleButton}) => {
             <button
               class="btn btn-primary"
               type="submit"
+              /* OnClick event handler implemented */
               onClick={handleButton}
             >
               Search
