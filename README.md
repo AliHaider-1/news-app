@@ -20,6 +20,6 @@ Deploy the app to the gitHub Pages.
 
 ### Deployment
 
-This app is deployed to gitHub pages but due to API free plan limitation does not show news articles: [https://facebook.github.io/create-react-app/docs/deployment](https://alihaider-1.github.io/news-app/)
+This app is deployed to gitHub pages but due to API free plan limitation does not show news articles: [https://alihaider-1.github.io/news-app/](https://alihaider-1.github.io/news-app/)
 
 
