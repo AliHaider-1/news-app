@@ -71,7 +71,7 @@ mode:'cors',});
       </header>
       <section className="App-section">
         <h1>BT React Code Test - by John Doe - #/01/21</h1>
-        <h4>{title}</h4>
+
         <SearchComponent handleButton={handleButton} />
 
         {isLoading ? (
@@ -80,28 +80,31 @@ mode:'cors',});
             <h3> ERROR:_ {state} </h3>
           </div>
         ) : (
-          <div className="row m-3 p-2">
-            {items.map((user,index) => (
-              <div key={index}>
-                <Card style={{ width: "20rem", height: "40rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src={user.urlToImage}
-                    style={{ height: "12rem" }}
-                    alt={user.title}
-                  />
-                  <Card.Title>
-                    <strong>{user.title}</strong>
-                  </Card.Title>
-                  <Card.Body>
-                    <Card.Text>{user.description}</Card.Text>
-                  </Card.Body>
-                  <a href={user.url} className="btn btn-primary">
-                    Goto Official Page
-                  </a>
-                </Card>
-              </div>
-            ))}
+          <div>
+            <h4>{title}</h4>
+            <div className="row m-3 p-2">
+              {items.map((user, index) => (
+                <div key={index}>
+                  <Card style={{ width: "20rem", height: "40rem" }}>
+                    <Card.Img
+                      variant="top"
+                      src={user.urlToImage}
+                      style={{ height: "12rem" }}
+                      alt={user.title}
+                    />
+                    <Card.Title>
+                      <strong>{user.title}</strong>
+                    </Card.Title>
+                    <Card.Body>
+                      <Card.Text>{user.description}</Card.Text>
+                    </Card.Body>
+                    <a href={user.url} className="btn btn-primary">
+                      Goto Official Page
+                    </a>
+                  </Card>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </section>
