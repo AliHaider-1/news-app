@@ -1,3 +1,4 @@
+/* background changed to BT-purple #5514b4  and font family Calibri applied */
 body {
   background-color: #5514b4 ;
   margin: 0;
@@ -7,9 +8,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* body,p,span color #333333 applied */
  body,p,span {
    color: #333333;
  }
+
+ /* font family Calibri applied */
 code {
   font-family: Calibri, source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
