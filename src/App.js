@@ -71,7 +71,7 @@ mode:'cors',});
       </header>
       <main>
         <section className="App-section">
-          <h1>BT React Code Test - by John Doe - #/01/21</h1>
+          <h1 className="p-1">BT React Code Test - by John Doe - #/01/21</h1>
 
           <SearchComponent handleButton={handleButton} />
 
@@ -81,19 +81,22 @@ mode:'cors',});
               <h3> ERROR:_ {state} </h3>
             </div>
           ) : (
-            <div className="container">
-              <h4>{title}</h4>
-              <div className="row m-3 p-2">
+            <div className="">
+              <h4 className="p-2">{title}</h4>
+              <div className="m-1 d-flex justify-content-center row ">
                 {items.map((user, index) => (
                   <div key={index}>
-                    <Card style={{ width: "16rem", height: "38rem" }}>
+                    <Card
+                      className="m-1"
+                      style={{ width: "16rem", height: "38rem" }}
+                    >
                       <Card.Img
                         variant="top"
                         src={user.urlToImage}
                         style={{ height: "12rem" }}
                         alt={user.title}
                       />
-                      <Card.Title>
+                      <Card.Title className="p-1">
                         <strong>{user.title}</strong>
                       </Card.Title>
                       <Card.Body>
