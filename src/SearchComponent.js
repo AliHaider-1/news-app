@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const SearchComponent = ({handleInput,handleButton}) => {
+const SearchComponent = ({handleButton}) => {
  
   return (
     <div>
@@ -10,14 +10,10 @@ const SearchComponent = ({handleInput,handleButton}) => {
           type="search"
           id="input"
           placeholder="Search News Articles"
-          onChange={handleInput}
         ></input>
         <button type="submit" onClick={handleButton}>
           Search
         </button>
-        <div>
-          <h1></h1>
-        </div>
       </form>
     </div>
   );

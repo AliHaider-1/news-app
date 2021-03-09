@@ -5,57 +5,57 @@ import Card from "react-bootstrap/Card";
 
 
 function App() {
-  let [searchInput, setSearchInput] = useState("");
 
  let [state,setState] =useState("");
+ let [title, setTitle] = useState("Top 10 Headlines of US");
 
-
-  function handleInput(e) {
-    setSearchInput(e.target.value);
-    console.log(e.target.value);
-  }
 
    let input = document.getElementById("input");
   
    function handleButton(e) {
     e.preventDefault();
-    setSearchInput(input.value);
+    setUrl(
+      `https://newsapi.org/v2/everything?q=${input.value}&apiKey=533137d100fe476da2cf7915337b04a3`
+    );
+    setTitle(`Showing news articles related to ${input.value}`)
     console.log(input.value);
    }
 
     const [isLoading, setIsLoading] = useState(true);
+    let [url, setUrl] = useState("https://newsapi.org/v2/top-headlines?country=us&apiKey=3ce1a4e5cf594ca7bd6ae27af898c3a1");
  
     const [dataArr, setDataArr] = useState("");
 useEffect(() => {
-    fetchData();
-  }, []);
-//fetching the api
   const fetchData = async () => {
     try {
-      const response = await fetch(
-        "https://newsapi.org/v2/top-headlines?country=us&apiKey=3ce1a4e5cf594ca7bd6ae27af898c3a1" 
-      );
+      const response = await fetch(url);
       if (response === undefined) {
         setIsLoading(true);
-      } 
-       else if (response === 426) {
-         setIsLoading(true);
-       } else {
-         const data = await response.json();
-         setDataArr(data.articles);
-         console.log(data);
-         setIsLoading(false);
-       }
-     
+      } else if (response.status >= 400) {
+        setIsLoading(true);
+        setState(response.status + " Bad Request ");
+      } else {
+        const data = await response.json();
+        setDataArr(data.articles);
+        console.log(data);
+        setIsLoading(false);
+      }
     } catch (err) {
       setState(err.message);
-     console.log(err.message);
-     
+      console.log(err.message);
     }
   };
-  
+  fetchData();
+}, [url]);
+        const list = dataArr;
+        const size = 10;
+        const items = list.slice(0, size);
         
-      
+        
+          
+          
+        
+
   return (
     <div className="App">
       <header className="App-header">
@@ -68,11 +68,8 @@ useEffect(() => {
       </header>
       <section className="App-section">
         <h1>BT React Code Test - by John Doe - #/01/21</h1>
-
-        <SearchComponent
-          handleInput={handleInput}
-          handleButton={handleButton}
-        />
+        <h4>{title}</h4>
+        <SearchComponent handleButton={handleButton} />
 
         {isLoading ? (
           <div>
@@ -81,16 +78,14 @@ useEffect(() => {
           </div>
         ) : (
           <div className="row m-3 p-2">
-            {dataArr.map((user) => (
-              <div>
-                <Card
-                  key={user.name}
-                  style={{ width: "20rem", height: "40rem" }}
-                >
+            {items.map((user,index) => (
+              <div key={index}>
+                <Card style={{ width: "20rem", height: "40rem" }}>
                   <Card.Img
                     variant="top"
                     src={user.urlToImage}
                     style={{ height: "12rem" }}
+                    alt={user.title}
                   />
                   <Card.Title>
                     <strong>{user.title}</strong>
